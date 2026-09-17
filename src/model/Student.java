@@ -1,16 +1,11 @@
 package model;
 
-/**
- * Represents a hostel resident who can be charged for
- * shared expenses and has an individual monthly budget.
- */
 public class Student {
-    private String studentId;      // e.g. S001
+    private String studentId;      
     private String name;
     private String roomNumber;
-    private double monthlyBudget;  // set by BudgetManager, 0 = not set
-    private double totalOwed;      // running share of shared expenses
-
+    private double monthlyBudget;  
+    private double totalOwed;     
     public Student(String studentId, String name, String roomNumber) {
         this.studentId = studentId;
         this.name = name;
@@ -19,7 +14,6 @@ public class Student {
         this.totalOwed = 0.0;
     }
 
-    // Used when reloading from the data file
     public Student(String studentId, String name, String roomNumber,
                     double monthlyBudget, double totalOwed) {
         this.studentId = studentId;
@@ -39,7 +33,6 @@ public class Student {
 
     public void addOwedAmount(double amount) { this.totalOwed += amount; }
 
-    /** Converts this student to a single CSV line for file storage. */
     public String toCsvLine() {
         return studentId + "," + name + "," + roomNumber + ","
                 + monthlyBudget + "," + totalOwed;
