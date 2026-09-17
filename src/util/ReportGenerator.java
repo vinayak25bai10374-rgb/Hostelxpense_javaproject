@@ -5,15 +5,8 @@ import model.Student;
 import java.util.List;
 import java.util.Map;
 
-/**
- * MODULE 3 (supporting): Reporting & Visualization.
- * Produces simple text-based bar charts and summaries directly in the
- * console - no external charting library needed, so it stays within
- * core Java for a first-year level submission.
- */
 public class ReportGenerator {
 
-    /** Prints a horizontal bar chart of spend-by-category using '#' characters. */
     public static void printCategoryChart(Map<String, Double> spendByCategory) {
         if (spendByCategory.isEmpty()) {
             System.out.println("No expenses recorded yet.");
@@ -27,8 +20,6 @@ public class ReportGenerator {
             System.out.printf("%-12s | %-40s Rs.%.2f%n", entry.getKey(), bar, entry.getValue());
         }
     }
-
-    /** Prints a ranked list of students by how much they currently owe. */
     public static void printOwedRanking(List<Student> students) {
         System.out.println("\n--- Amount Owed Ranking ---");
         students.stream()
