@@ -4,19 +4,15 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Handles all raw file reading/writing for the app.
- * Kept generic (plain CSV text files) so it works with core Java only
- * (Non-functional requirement: Reliability - data survives program restarts).
- */
+
 public class FileHandler {
 
-    /** Reads every line of a file, returning an empty list if it doesn't exist yet. */
+
     public static List<String> readLines(String filePath) {
         List<String> lines = new ArrayList<>();
         File file = new File(filePath);
         if (!file.exists()) {
-            return lines; // first run - no data yet, not an error
+            return lines; 
         }
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
@@ -31,7 +27,7 @@ public class FileHandler {
         return lines;
     }
 
-    /** Overwrites the file with the given lines (used to save the full in-memory state). */
+   
     public static void writeLines(String filePath, List<String> lines) {
         try {
             File file = new File(filePath);
