@@ -11,19 +11,6 @@ import util.ReportGenerator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-/**
- * HostelXpense - Smart Hostel Expense & Bill-Splitter
- * ----------------------------------------------------
- * A console-based Java application for hostel students to log shared
- * expenses (food orders, wifi, electricity, cleaning, etc.), split bills
- * automatically among roommates, track personal budgets, and view
- * simple spend analytics - all backed by plain CSV file storage so no
- * database setup is required.
- *
- * Entry point: wires together the three functional modules and
- * presents a simple text menu (Usability requirement).
- */
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
     private static final StudentManager studentManager = new StudentManager();
@@ -82,7 +69,7 @@ public class Main {
         System.out.print("Enter choice: ");
     }
 
-    // ---------- Module 1: Student Management ----------
+    
 
     private static void addStudent() {
         System.out.print("Enter student name: ");
@@ -107,7 +94,7 @@ public class Main {
         for (Student s : students) System.out.println(s);
     }
 
-    // ---------- Module 2: Expense Management & Bill Splitting ----------
+    
 
     private static void addExpense() throws InvalidAmountException, StudentNotFoundException {
         if (studentManager.getAllStudents().isEmpty()) {
@@ -157,7 +144,7 @@ public class Main {
         for (Expense e : expenses) System.out.println(e);
     }
 
-    // ---------- Module 3: Budget Tracking & Analytics ----------
+    
 
     private static void setBudget() throws StudentNotFoundException, InvalidAmountException {
         System.out.print("Student ID: ");
