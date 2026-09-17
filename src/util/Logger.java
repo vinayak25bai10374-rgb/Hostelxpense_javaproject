@@ -6,10 +6,6 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Very small logging utility (Non-functional requirement: Logging/Monitoring).
- * Appends timestamped events to data/activity.log instead of failing silently.
- */
 public class Logger {
     private static final String LOG_FILE = "data/activity.log";
     private static final DateTimeFormatter FORMAT =
