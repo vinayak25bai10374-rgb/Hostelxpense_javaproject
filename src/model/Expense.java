@@ -2,17 +2,13 @@ package model;
 
 import java.util.List;
 
-/**
- * Represents a single shared expense paid by one student
- * and split among a list of participant student IDs.
- */
 public class Expense {
     private String expenseId;
     private String paidByStudentId;
-    private String category;       // e.g. Food, Electricity, Wifi, Cleaning
+    private String category;       
     private double amount;
-    private String date;           // stored as dd-MM-yyyy string, kept simple for 1st-year level
-    private List<String> sharedWithIds; // student IDs who share this expense (includes payer)
+    private String date;           
+    private List<String> sharedWithIds; 
 
     public Expense(String expenseId, String paidByStudentId, String category,
                     double amount, String date, List<String> sharedWithIds) {
